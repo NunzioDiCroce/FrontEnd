@@ -3,74 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sviluppo di una pagina web - Blog Epicode</title>
+
+    <link href="../S1_L2/assets/images/EPICODE-pitto-color.png" rel="icon">
 </head>
 <body>
-
-    <table>
-        <caption>Registro presenze</caption>
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Anno</th>
-                <th>Presenze</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Luca</td>
-                <td>2021</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>Maria</td>
-                <td>2021</td>
-                <td>27</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td>Totale</td>
-                <td>2021</td>
-                <td>57</td>
-            </tr>
-        </tfoot>
-
-    </table>
+    <header>
+        <div>
+            <figure>
+                <img src="../S1_L2/assets/images/EPICODE-pitto-color.png" alt="logo" width="10%" height="">
+                <figcaption></figcaption>
+            </figure>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="javascript:void(0)" title="Home" target="_blank" rel="follow">Home</a></li>
+                <li><a href="javascript:void(0)" title="Articoli" target="_blank" rel="follow">Articoli</a></li>
+                <li><a href="javascript:void(0)" title="Job" target="_blank" rel="follow">Job</a></li>
+            </ul>
+        </nav>
+    </header>
     <hr>
 
-    <form method="post" action="" autocomplete="on">
-        <fieldset>
-            <legend>Anagrafica</legend>
+    <main>
+        <article>
 
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Inserire nome"><br>
+        </article>
+        <aside>
+            <h2>Articoli correlati</h2>
+            <div>
+                <a href="javascript:void(0)" title="Validare il codice HTML" target="_blank" rel="">Validare il codice HTML</a>
+                <p>Categoria: develop</p>
+                <p>Data: 18-9-2020</p>
+            </div>
+            <div>
+                <a href="javascript:void(0)" title="Correggere la sintassi" target="_blank" rel="">Correggere la sintassi</a>
+                <p>Categoria: develop</p>
+                <p>Data: 16-9-2020</p>
+            </div>
+            <div>
+                <a href="javascript:void(0)" title="Meno Kb nella pagina" target="_blank" rel="">Meno Kb nella pagina</a>
+                <p>Categoria: ottimizzazione</p>
+                <p>Data: 30-9-2020</p>
+            </div>
+        </aside>
+    </main>
+    <hr>
 
-            <label for="cognome">Cognome</label>
-            <input type="text" id="cognome" name="cognome" placeholder="Inserire cognome"><br>
-
-            <label for="mail">Mail</label>
-            <input type="email" id="mail" nome="mail" placeholder="Inserire mail"><br>
-
-            <label for="note">Note</label>
-            <textarea id="note" name="note" placeholder="Inserire note" rows="5" cols="50"></textarea><br>
-        </fieldset>
-        <fieldset>
-            <legend>Metodo di pagamento</legend>
-
-            <select id="metodiPagamento" name="meotdiPagamento">
-                <optgroup label="metodo">
-                    <option value=""></option>
-                    <option value="cartaCredito">Carta di credito</option>
-                    <option value="bonifico">Bonifico</option>
-                    <option value="paypal">PayPal</option>
-                </optgroup>
-            </select><br>
-        </fieldset>
-
-        <button type="submit">Invia form</button>
-
-    </form>
+    <footer>
+        <p>Blog Epicode &copy; 2021</p>
+        <address>Testata online di Mario Rossi, registrata con prot. n.213/2018 - via Luigi Einaudi 2 - Milano. P.IVA 00112233. <a href="mailto:info@epicode.school" title="mailto">info@epicode.school</a></address>
+    </footer>
     
 </body>
 </html>
