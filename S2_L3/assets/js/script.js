@@ -2,25 +2,59 @@
  Scrivi un algoritmo per trovare il più grande tra due numeri interi.
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+var primoNumero = 410;
+var secondoNumero = 400;
+document.getElementById('primoNumero').innerHTML = primoNumero;
+document.getElementById('secondoNumero').innerHTML = secondoNumero;
+if(primoNumero > secondoNumero) {
+    document.getElementById('numeroPiuGrande').innerHTML = primoNumero;
+} else {
+    document.getElementById('numeroPiuGrande').innerHTML = secondoNumero;
+}
 
 /* ESERCIZIO 2
   Scrivi un algoritmo che mostri "not equal" in console se un numero intero fornito è diverso da 5.
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+var numeroFornito = 5;
+document.getElementById('numero').innerHTML = numeroFornito;
+if(numeroFornito != 5) {
+    console.log('not equal to 5');
+    document.getElementById('console').innerHTML = 'not equal to 5';
+} else {
+    console.log('equal to 5');
+    document.getElementById('console').innerHTML = 'equal to 5';
+}
 
 /* ESERCIZIO 3
   Scrivi un algoritmo che mostri "divisibile per 5" in console se un numero fornito è perfettamente divisibile per 5 (suggerimento: cerca l'operatore modulo su un motore di ricerca)
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+var numero = 100;
+document.getElementById('fornito').innerHTML = numero;
+if (numero % 5 == 0) {
+    document.getElementById('divisibile').innerHTML = 'divisibile per 5';
+} else {
+    document.getElementById('divisibile').innerHTML = 'NON divisibile per 5';
+}
 
 /* ESERCIZIO 4
   Scrivi un algoritmo per verificare che, dati due numeri interi, il valore di uno di essi sia 8 oppure se la loro addizione/sottrazione sia uguale a 8.
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+var primoIntero = 2;
+var secondoIntero = 7;
+document.getElementById('primoIntero').innerHTML = primoIntero;
+document.getElementById('secondoIntero').innerHTML = secondoIntero;
+if (primoIntero == 8 || secondoIntero == 8) {
+    document.getElementById('otto').innerHTML = 'almeno un numero è otto';
+} else if ( primoIntero + secondoIntero == 8 || secondoIntero + primoIntero == 8) {
+    document.getElementById('otto').innerHTML ='nessuno dei due numeri è otto ma la loro addizione è uguale ad otto';
+} else if ( primoIntero - secondoIntero == 8 || secondoIntero - primoIntero == 8) {
+    document.getElementById('otto').innerHTML ='nessuno dei due numeri è otto ma la loro sottrazione è uguale ad otto';
+} else {
+    document.getElementById('otto').innerHTML = 'nessuno dei due numeri è otto e neanche la loro addizione/sottrazione è uguale ad otto';
+}
 
 /* ESERCIZIO 5
   Stai lavorando su un sito di e-commerce. Stai salvando il saldo totale del carrello dell'utente in una variabile "totalShoppingCart".
@@ -28,6 +62,19 @@
   Crea un algoritmo che determini l'ammontare totale che deve essere addebitato all'utente per il checkout.
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
+var totalShoppingCard = 51;
+var shipping;
+var totalAmount;
+if (totalShoppingCard > 50) {
+    shipping = 0;
+    totalAmount = totalShoppingCard + shipping;
+} else {
+    shipping = 10;
+    totalAmount = totalShoppingCard + shipping;
+}
+document.getElementById('shopping').innerHTML = totalShoppingCard;
+document.getElementById('shipping').innerHTML = shipping;
+document.getElementById('amount').innerHTML = totalAmount;
 
 
 /* ESERCIZIO 6
@@ -35,7 +82,21 @@
   Modifica la risposta precedente includendo questa nuova promozione nell'algoritmo, determinando come prima se le spedizioni sono gratuite oppure no e e calcolando il totale.
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+var totalShoppingCard2 = 50;
+var totalShoppingCard2_discount = 0.8 * totalShoppingCard2;
+var shipping2;
+var totalAmount2;
+if (totalShoppingCard2_discount > 50) {
+  shipping2 = 0;
+  totalAmount2 = totalShoppingCard2_discount + shipping2;
+} else {
+  shipping2 = 10;
+  totalAmount2 = totalShoppingCard2_discount + shipping2;
+}
+document.getElementById('shopping2').innerHTML = totalShoppingCard2;
+document.getElementById('discunt').innerHTML = totalShoppingCard2_discount;
+document.getElementById('shipping2').innerHTML = shipping2;
+document.getElementById('amount2').innerHTML = totalAmount2;
 
 /* ESERCIZIO 7
   Crea tre variabili, e assegna un valore numerico a ciascuna di esse.
@@ -43,13 +104,35 @@
   Alla fine mostra il risultato in console.
   */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+var prima = 80;
+var seconda = 10;
+var terza = 50;
+document.getElementById('prima').innerHTML = prima;
+document.getElementById('seconda').innerHTML = seconda;
+document.getElementById('terza').innerHTML = terza;
+if (prima > seconda && prima > terza && seconda > terza) {
+  document.getElementById('ordine').innerHTML = prima + ' ' + seconda + ' ' + terza;
+} else if (prima > seconda && prima > terza && seconda < terza) {
+    document.getElementById('ordine').innerHTML = prima + ' ' + terza + ' ' + seconda;
+} else if (seconda > prima && seconda > terza && prima > terza) {
+  document.getElementById('ordine').innerHTML = seconda + ' ' + prima + ' ' + terza;
+} else if (seconda > prima && seconda > terza && terza > prima) {
+  document.getElementById('ordine').innerHTML = seconda + ' ' + terza + ' ' + prima;
+} else if (terza > prima && terza > seconda && prima > seconda) {
+  document.getElementById('ordine').innerHTML = terza + ' ' + prima + ' ' + seconda;
+} else if (terza > prima && terza > seconda && seconda > prima) {
+  document.getElementById('ordine').innerHTML = terza + ' ' + seconda + ' ' + prima;
+} else {
+  document.getElementById('ordine').innerHTML = 'inserire tre variabili diverse';
+}
 
 /* ESERCIZIO 8
   Crea un algoritmo per verificare che un valore fornito sia un numero oppure no (suggerimento: cerca su un motore di ricerca "typeof").
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+var numero2 = 1000;
+document.getElementById('fornito2').innerHTML = numero2;
+document.getElementById('unNumero').innerHTML = typeof numero2;
 
 /* ESERCIZIO 9
   Crea un algoritmo per controllare se un numero fornito sia pari o dispari (suggerimento: cerca l'operatore modulo su un motore di ricerca)
