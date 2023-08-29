@@ -138,7 +138,13 @@ document.getElementById('unNumero').innerHTML = typeof numero2;
   Crea un algoritmo per controllare se un numero fornito sia pari o dispari (suggerimento: cerca l'operatore modulo su un motore di ricerca)
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+var pariDispari = 109;
+document.getElementById('pariDispari').innerHTML = pariDispari;
+if (pariDispari % 2 === 0) {
+  document.getElementById('pariDispari2').innerHTML = 'pari';
+} else {
+  document.getElementById('pariDispari2').innerHTML = 'dispari';
+}
 
 /* ESERCIZIO 10
   Modifica la logica del seguente algoritmo in modo che mostri in console il messaggio corretto in ogni circostanza.
@@ -152,34 +158,84 @@ document.getElementById('unNumero').innerHTML = typeof numero2;
     }
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+let val = 7;
+let messaggio;
+if (val < 5) {
+    console.log("Meno di 5");
+    messaggio = 'Meno di 5';
+  } else if (val < 10) {
+    console.log("Meno di 10");
+    messaggio = 'Meno di 10';
+  } else {
+    console.log("Uguale a 10 o maggiore");
+    messaggio = 'Uguale a 10 o maggiore';
+  }
+  document.getElementById('val').innerHTML = val;
+  document.getElementById('val2').innerHTML = messaggio;
 
 /* ESERCIZIO 11
   Fornito il seguente oggetto, scrivi del codice per aggiungere una proprietà "city", il cui valore sarà "Toronto".
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const me = {
+    name: 'John',
+    lastName: 'Doe',
+    skills: ['javascript', 'html', 'css'],
+}
+me.city = 'Toronto';
+document.getElementById('nome').innerHTML = me.name;
+document.getElementById('cognome').innerHTML = me.lastName;
+document.getElementById('capacita').innerHTML = me.skills;
+document.getElementById('nuovaProprieta').innerHTML = me.city;
 
 /* ESERCIZIO 12
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere la proprietà "lastName".
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const me2 = {
+    name2: 'John',
+    lastName2: 'Doe',
+    skills2: ['javascript', 'html', 'css'],
+}
+me2.city2 = 'Toronto';
+delete me2.lastName2;
+document.getElementById('nome2').innerHTML = me2.name2;
+document.getElementById('cognome2').innerHTML = me2.lastName2;
+document.getElementById('capacita2').innerHTML = me2.skills2;
+document.getElementById('nuovaProprieta2').innerHTML = me2.city2;
 
 /* ESERCIZIO 13
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere l'ultimo elemento della proprietà "skills".
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const me3 = {
+    name3: 'John',
+    lastName3: 'Doe',
+    skills3: ['javascript', 'html', 'css'],
+}
+me3.city3 = 'Toronto';
+delete me3.lastName3;
+me3.skills3.pop();
+document.getElementById('nome3').innerHTML = me3.name3;
+document.getElementById('cognome3').innerHTML = me3.lastName3;
+document.getElementById('capacita3').innerHTML = me3.skills3;
+document.getElementById('nuovaProprieta3').innerHTML = me3.city3;
 
 /* ESERCIZIO 14
   Scrivi del codice per creare un array inizialmente vuoto. Riempilo successivamente con i numeri da 1 a 10.
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+var array = new Array();
+for (i=1; i<11; i++) {
+    let numero = i;
+    array.push(numero);    
+}
+document.getElementById('valori').innerHTML = array;
 
 /* ESERCIZIO 15
   Scrivi del codice per sostituire l'ultimo elemento dell'array, ovvero il valore 10, con il valore 100.
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+array.pop();
+array.push(100);
+document.getElementById('valori2').innerHTML = array;
