@@ -40,3 +40,74 @@ nav ul {
     list-style-type: none;
     padding: 0;
 }
+
+ion-icon {
+    font-size: 0.8em;
+    margin-right: 0.3em;
+}
+
+main {
+    width: 80%;
+    margin:auto;
+    background-color: white;
+    box-shadow: 0px 0px 5px 2px gray;
+    padding: 2em 1em;
+}
+
+#author {
+    color: #a0a0a0;
+}
+
+strong {
+    color: #a02571;
+}
+
+code {
+    background-color:#e3e3e3;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 0.2em;
+}
+
+table {
+    margin:auto;
+    border-collapse: collapse;
+}
+
+caption {
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+}
+
+th {
+    text-align: center;
+    background-color:cornflowerblue;
+    color:white;
+    padding: 1.2em 1.2em;
+}
+
+tr:nth-child(even) {
+    background-color:#e3e3e3;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+td {
+    text-align: center;
+}
+
+hr {
+    border: 1px solid cornflowerblue;;
+}
+
+a {
+    color: #00A0C6;
+}
+
+iframe {
+    width:95%;
+    border-radius: 20px;
+    margin: 0 0 2em 0.2em;
+}
+
