@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPICODE - IL BLOG DEI DEVELOPERS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../S1_L4/assets/css/style.css">
+
+</head>
+<body>
+
+    <header>
+        <div><img src="../S1_L4/assets/images/logo.svg" alt="Logo" width="250px"></div>
+        <p>EPICODE - IL BLOG DEI DEVELOPERS</p>
+        <nav>
+            <ul>
+                <li><ion-icon name="star"></ion-icon>HOME</li>
+                <li><ion-icon name="star"></ion-icon>ARTICOLI</li>
+                <li><ion-icon name="star"></ion-icon>LAVORA CON NOI</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <article>
+            <h1>Come creare un template per i post</h1>
+            <p id="author"><ion-icon name="create"></ion-icon>di Mario Rossi - <ion-icon name="time"></ion-icon>pubblicato il 25-10-2020</p>
+            <p>La prima cosa da fare è suddividere in blocchi logici la pagina, identificando le <strong>parti comuni</strong> da applicare a tutte le pagine</p>
+            <p>Le varie aree saranno quindi suddivise in:</p>
+            <ul>
+                <li>Contenuti di intestazione del tag <code>&lt;header&gt;</code></li>
+                <li>Contenuti centrali variabili del tag <code>&lt;main&gt;</code> &#40;corpo principale&#41;</li>
+                <li>Contenuti di fine pagina comuni, da inserire nel tag <code>&lt;footer&gt;</code></li>
+            </ul>
+
+            <p>Formattazione del codice<br>Il testo dell'articolo dovrà essere formattato per identificare tutte le parti da <strong>selezionare con i CSS</strong>. Perciò i passi saranno:</p>
+            <ol>
+                <li>Progettare su carta il markup finale, assegnando ad ogni specifico testo il tag appropriato</li>
+                <li>Scrivere l'HTML dai tag esterni a quelli interni e dall'alto verso il basso</li>
+                <li>Applicare gli stili CSS</li>
+            </ol>
+
+            <p>L'applicazione di stili CSS è cresciuta negli anni fino a raggiungere la diffusione pressoché totale.</p>
+
+            <table>
+                <caption>Diffusione dei CSS</caption>
+                <thead>
+                    <tr>
+                        <th>Anno</th>
+                        <th>&percnt; di utilizzo</th>
+                        <th>Supporto browsers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2000</td>
+                        <td>20&percnt;</td>
+                        <td>17&percnt;</td>
+                    </tr>
+                    <tr>
+                        <td>2002</td>
+                        <td>35&percnt;</td>
+                        <td>22&percnt;</td>
+                    </tr>
+                    <tr>
+                        <td>2004</td>
+                        <td>45&percnt;</td>
+                        <td>42&percnt;</td>
+                    </tr>
+                    <tr>
+                        <td>2008</td>
+                        <td>80&percnt;</td>
+                        <td>51&percnt;</td>
+                    </tr>
+                    <tr>
+                        <td>2012</td>
+                        <td>100&percnt;</td>
+                        <td>76&percnt;</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <p>Un test di validazione potrà essere fatto tramite il <a href="javascript:null(0);" title="tool online">tool online</a> dedicato allo scopo. Una volta ottimizzato il tutto, avremo raggiunto il nostro obiettivo ed essere stati dei veri developers come loro:</p>
+
+            <iframe src="https://www.youtube.com/embed/IjzdMvuzxDY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen width="0" height="180" ></iframe>
+
+            <section id="novita">
+                <h2>NOVITA'</h2>
+                <p>Vuoi rimanere aggiornato su altre novità del blog? Iscriviti alla nostra newsletter:</p>
+                <form>
+                    <input type="email" placeholder="inserisci l'email">
+                    <button type="button">Iscriviti!</button>
+                </form>
+            </section>
+
+        </article>
+
+        <aside>
+            <h2>ARTICOLI CORRELATI</h2>
+            <div class="aside_box">
+                <a href="javascript:null(0)" title="Validare il codice HTML" target="_blank" rel="follow">Validare il codice HTML</a>
+                <p class="categoria"><ion-icon name="pricetag"></ion-icon>Categoria: develop</p>
+                <p class="aside_box_date"><ion-icon name="calendar"></ion-icon>Data: 18-9-2020</p>
+            </div>
+            <div class="aside_box">
+                <a href="javascript:null(0)" title="Correggere la sintassi" target="_blank" rel="follow">Correggere la sintassi</a>
+                <p class="categoria"><ion-icon name="pricetag"></ion-icon>Categoria: develop</p>
+                <p class="aside_box_date"><ion-icon name="calendar"></ion-icon>Data: 16-9-2020</p>
+            </div>
+            <div class="aside_box">
+                <a href="javascript:null(0)" title="Meno Kb nella pagina" target="_blank" rel="follow">Meno Kb nella pagina</a>
+                <p class="categoria"><ion-icon name="pricetag"></ion-icon>Categoria: ottimizzazione</p>
+                <p class="aside_box_date"><ion-icon name="calendar"></ion-icon>Data: 30-9-2020</p>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>Blog Epicode &copy; 2021</p>
+        <p>Testata online di Mario Rossi, registrata con prot. n.213/2018 - via Luigi Einaudi 2 - Milano. P.IVA 00112233. <a id="mail" href="mailto:info@epicode.school" title="mailto" target="" rel="">info@epicode.school</a></p>
+    </footer>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
