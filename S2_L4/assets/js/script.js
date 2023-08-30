@@ -180,13 +180,28 @@ for (i=0; i<starWarsCharacters.length; i++) {
         case 'blue_gray':
             eyeColor.blue_gray.push(starWarsCharactersObject5);
     }
-    console.log(eyeColor);
 }
+document.getElementById('blueLenght').innerHTML = eyeColor.blue.length;
+document.getElementById('yellowLenght').innerHTML = eyeColor.yellow.length;
+document.getElementById('brownLenght').innerHTML = eyeColor.brown.length;
+document.getElementById('redLenght').innerHTML = eyeColor.red.length;
+document.getElementById('blue_grayLenght').innerHTML = eyeColor.blue_gray.length;
 
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio
 */
 
+let n = 0;
+let massNumber = 0;
+
+while(n < starWarsCharacters.length) {
+    
+    let starWarsCharactersObject6 = starWarsCharacters[n];
+    massNumber = massNumber + parseInt(starWarsCharactersObject6.mass);
+    n++;
+}
+console.log(massNumber);
+document.getElementById('totalMass').innerHTML = massNumber;
 
 /* ESERCIZIO 7
 Crea uno switch statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'impotetica astronave contenente i personaggi dell'array "starWarsCharacters"
@@ -198,12 +213,44 @@ Se la massa è superiore a 900 stampa in console: "Critical Load: Over 900",
 Se la massa è superiore a 1000 stampa in console: "DANGER! OVERLOAD ALERT: Jump ship now!"
 Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
 */
-
+switch (true) {
+    case massNumber<1000 && massNumber<900 && massNumber<700 && massNumber<500 :
+        console.log('Ship is under loaded');
+        document.getElementById('message').innerHTML = '\"Ship is under loaded\"';
+        break;
+    case massNumber<1000 && massNumber<900 && massNumber<700 || massNumber===500 :
+        console.log('Ship is half loaded');
+        document.getElementById('message').innerHTML = '\"Ship is half loaded\"';
+        break;
+    case massNumber<1000 && massNumber<900 && massNumber>700 :
+        console.log('Warning: Load is over 700');
+        document.getElementById('message').innerHTML = '\"Warning: Load is over 700\"';
+        break;
+    case massNumber<1000 && massNumber>900 :
+        console.log('Critical Load: Over 900');
+        document.getElementById('message').innerHTML = '\"Critical Load: Over 900\"';
+        break;
+    case massNumber>1000 :
+        console.log('DANGER! OVERLOAD ALERT: Jump ship now!');
+        document.getElementById('message').innerHTML = '\"DANGER! OVERLOAD ALERT: Jump ship now!\"';
+        break;
+}
+document.getElementById('totalMass7').innerHTML = massNumber;
 
 /* ESERCIZIO 8
 Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi creare un nuovo array, o tentare la riassegnazione del valore corrispondente)
 */
+const starWarsCharactersNew = starWarsCharacters;
 
+for(i=0; i<starWarsCharactersNew.length; i++) {
+
+    let starWarsCharactersNewObject = starWarsCharacters[i];
+
+    if(starWarsCharactersNewObject.gender == 'n/a') {
+        starWarsCharactersNewObject.gender = 'robot'
+    }
+}
+console.log(starWarsCharacters);
 
 /* EXTRA ESERCIZIO 9
 Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "characters" le stringhe corrispondenti a personaggi con lo stesso nome"
@@ -211,9 +258,51 @@ Usa uno più for loop per raggiungere il risultato
 (tip: cerca un metodo degli array per rimuovere un elemento)
 Una volta fatto crea un console.log per controllare la proprietà length di "characters" prima e dopo l'operazione
 */
+const charactersNew = [
+    'Luke Skywalker',
+    'C-3PO',
+    'R2-D2',
+    'Darth Vader',
+    'Leia Organa',
+    'Owen Lars',
+    'Beru Whitesun lars',
+    'R5-D4',
+    'Biggs Darklighter',
+    'Obi-Wan Kenobi'
+];
+console.log(charactersNew);
+document.getElementById('charactersLength').innerHTML = charactersNew.length;
 
+console.log(femaleCharacters);
+document.getElementById('femaleCharactersLength').innerHTML = femaleCharacters.length;
+
+for (i=0; i<charactersNew.length; i++) {
+    let charactersNewObject = charactersNew[i];
+
+    for (j=0; j<femaleCharacters.length; j++) {
+        let femaleCharactersObject = femaleCharacters[j];
+
+        if (femaleCharactersObject.name === charactersNewObject) {
+            charactersNew.splice(i,1);
+        }
+    }
+}
+console.log(charactersNew);
+document.getElementById('charactersLengthNew').innerHTML = charactersNew.length;
 
 /* EXTRA ESERCIZIO 10
 Crea una funzionalità che prenda un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo
 */
-
+document.getElementById('starWarsCharactersLunghezza').innerHTML = starWarsCharacters.length;
+document.getElementById('posizione').innerHTML = Math.floor(Math.random()*11);
+var starWarsCharactersObj = starWarsCharacters[Math.floor(Math.random()*11)];
+console.log(Object.keys(starWarsCharactersObj));
+console.log(Object.values(starWarsCharactersObj));
+document.getElementById('prop1').innerHTML = starWarsCharactersObj.name;
+document.getElementById('prop2').innerHTML = starWarsCharactersObj.height;
+document.getElementById('prop3').innerHTML = starWarsCharactersObj.mass;
+document.getElementById('prop4').innerHTML = starWarsCharactersObj.hair_color;
+document.getElementById('prop5').innerHTML = starWarsCharactersObj.skin_color;
+document.getElementById('prop6').innerHTML = starWarsCharactersObj.eye_color;
+document.getElementById('prop7').innerHTML = starWarsCharactersObj.birth_year;
+document.getElementById('prop8').innerHTML = starWarsCharactersObj.gender;
