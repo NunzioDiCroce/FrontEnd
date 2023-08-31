@@ -2,12 +2,29 @@
   Scrivi una funzione per concatenare due stringhe ricevute come parametri, selezionando solamente i primi 2 caratteri della
   prima e gli ultimi 3 della seconda. Converti la stringa risultante in maiuscolo e mostrala con un console.log().
 */
-
+console.log('- - - - ESERCIZIO 1 - - - -');
+var str1;
+var str2;
+function funzione1 (str1, str2) {
+    var str1New = str1.slice(0,2);
+    var str2New = str2.slice(str2.length-3);
+    var str3 = str1New + str2New;
+    console.log(str3.toUpperCase());
+}
+funzione1 ('mario', 'giuseppe');
 
 /* ESERCIZIO 2
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
-
+function funzione2(lunghezza) {
+    var randomArray = [];
+    for(let i=0; i<lunghezza; i++) {
+        var arrayItem = randomArray[i];
+        arrayItem.push(Math.round(Math.random()*100));
+    }
+    console.log(randomArray);
+}
+funzione2(11);
 
 /* ESERCIZIO 3
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici (suggerimento: il metodo filter può aiutare)
