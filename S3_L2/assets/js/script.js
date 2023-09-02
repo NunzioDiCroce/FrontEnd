@@ -16,11 +16,12 @@ funzione1 ('mario', 'giuseppe');
 /* ESERCIZIO 2
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
-function funzione2(lunghezza) {
-    var randomArray = [];
-    for(let i=0; i<lunghezza; i++) {
-        var arrayItem = randomArray[i];
-        arrayItem.push(Math.round(Math.random()*100));
+console.log('- - - - ESERCIZIO 2 - - - -');
+var randomArray = [];
+function funzione2() {
+    for(let i=0; i<10; i++) {
+      var number = Math.round(Math.random()*100)+1;
+      randomArray.push(number);
     }
     console.log(randomArray);
 }
@@ -29,36 +30,90 @@ funzione2(11);
 /* ESERCIZIO 3
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici (suggerimento: il metodo filter può aiutare)
 */
+console.log('- - - - ESERCIZIO 3 - - - -');
+var numbersArray = [];
 
+function funzione() {
+  for(let i=0; i<10; i++) {
+    var number = Math.round(Math.random()*100)+1;
+    numbersArray.push(number);
+  }
+  console.log(numbersArray);
+}
+funzione();
+
+var FilterNumbersArray = numbersArray.filter(funzione3);
+function funzione3(item) {
+  for(let i=0; i<numbersArray.length; i++) {
+    return item%2 === 0;
+  }
+}
+console.log(FilterNumbersArray);
 
 /* ESERCIZIO 4
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
-
+console.log('- - - - ESERCIZIO 4 - - - -');
+var array4 = [1,2,3];
+var somma = 0;
+function funzione4() {
+  for(let i=0; i<array4.length; i++) {
+    somma += array4[i];
+  }
+}
+funzione4();
+console.log(array4);
+console.log(somma);
 
 /* ESERCIZIO 5
   Scrivi una funzione per sommare i numeri contenuti in un array (usare REDUCE)
 */
-
+console.log('- - - - ESERCIZIO 5 - - - -');
+var array5 = [1,2,3];
+var array5reduce = array5.reduce(funzione5);
+function funzione5(totale, numero) {
+  return totale+numero;
+}
+console.log(array5);
+console.log(array5reduce);
 
 /* ESERCIZIO 6
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
-
+console.log('- - - - ESERCIZIO 6 - - - -');
+var array6 = [1,2,3];
+var n = 2;
+var array6Map = array6.map(funzione6);
+function funzione6(valore) {
+  return valore + n;
+}
+console.log(array6);
+console.log(n);
+console.log(array6Map);
 
 console.log('- - - - ESERCIZIO 7 non presente nel file della piattaforma - - - -');
-
 
 /* ESERCIZIO 8
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
-
+console.log('- - - - ESERCIZIO 8 - - - -');
+var stringArray = ['pippo', 'pluto', 'paperino'];
+console.log(stringArray);
+var lengthArray = [];
+function funzione8() {
+  for(let i=0; i<stringArray.length; i++) {
+    let length = stringArray[i].length;
+    lengthArray.push(length);
+  }
+}
+funzione8();
+console.log(lengthArray);
 
 /* ESERCIZIO 9
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
-
+console.log('- - - - ESERCIZIO 9 - - - -');
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
@@ -174,30 +229,30 @@ const movies = [
   /* ESERCIZIO 10
     Scrivi una funzione per trovare il film più vecchio nell'array fornito.
   */
-
+    console.log('- - - - ESERCIZIO 10 - - - -');
 
 /* ESERCIZIO 11
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
-
+console.log('- - - - ESERCIZIO 11 - - - -');
 
 /* ESERCIZIO 12
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
-
+console.log('- - - - ESERCIZIO 12 - - - -');
 
 /* ESERCIZIO 13
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
-
+console.log('- - - - ESERCIZIO 13 - - - -');
 
 /* ESERCIZIO 14
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
-
+console.log('- - - - ESERCIZIO 14 - - - -');
 
 /* ESERCIZIO 15
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
-
+console.log('- - - - ESERCIZIO 15 - - - -');
 
