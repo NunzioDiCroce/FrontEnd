@@ -244,10 +244,33 @@ const movies = [
     }
   ];
   
-  /* ESERCIZIO 10
-    Scrivi una funzione per trovare il film più vecchio nell'array fornito.
-  */
-    console.log('- - - - ESERCIZIO 10 - - - -');
+/* ESERCIZIO 10
+  Scrivi una funzione per trovare il film più vecchio nell'array fornito.
+*/
+console.log('- - - - ESERCIZIO 10 - - - -');
+console.log(movies);
+
+var yearMoviesArray = [];
+for(let i=0; i<movies.length; i++) {
+  yearMoviesArray.push(movies[i].Year);
+}
+console.log(yearMoviesArray);
+
+var minValue = Math.min.apply(Math, yearMoviesArray);
+console.log('Anno minimo: ' + minValue);
+
+var oldestMovies = movies.filter(funzione10);
+function funzione10() {
+  for(let i=0; i<movies.length; i++) {
+    movies[i].Year == minValue;
+  }
+}
+console.log(oldestMovies);
+
+
+
+
+    
 
 /* ESERCIZIO 11
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
