@@ -276,24 +276,76 @@ funzione10();
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
 console.log('- - - - ESERCIZIO 11 - - - -');
+function funzione11() {
+  console.log('Il numero di film in array è: ' + movies.length);
+}
+funzione11();
 
 /* ESERCIZIO 12
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
 console.log('- - - - ESERCIZIO 12 - - - -');
+console.log(movies);
+var moviesTytles = [];
+function funzione12() {
+  for(let i=0; i<movies.length; i++) {
+    moviesTytles.push(movies[i].Title);
+  }
+  console.log(moviesTytles);
+}
+funzione12();
+
+/*console.log(moviesTytles.length);*/
 
 /* ESERCIZIO 13
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
 console.log('- - - - ESERCIZIO 13 - - - -');
+console.log(movies);
+
+var milleniumMovies = [];
+
+function funzione13() {
+  for(let i=0; i<movies.length; i++) {
+    if(movies[i].Year > 1999) {
+      milleniumMovies.push(movies[i]);
+    }
+  }
+  console.log(milleniumMovies);
+}
+funzione13();
 
 /* ESERCIZIO 14
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
 console.log('- - - - ESERCIZIO 14 - - - -');
+console.log(movies);
+
+var desiredMovie = [];
+
+function funzione14(param) {
+  for(let i=0; i<movies.length; i++) {
+    if(movies[i].imdbID === param) {
+      desiredMovie.push(movies[i]);
+    }
+  }
+  console.log(desiredMovie);
+}
+funzione14('tt4154796');
+
 
 /* ESERCIZIO 15
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
 console.log('- - - - ESERCIZIO 15 - - - -');
+console.log(movies);
+/*console.log(typeof movies[1].Year);*/
+var sum = 0;
 
+function funzione15() {
+  for(let i=0; i<movies.length; i++) {
+    sum += parseInt(movies[i].Year);
+  }
+console.log(sum);
+}
+funzione15();
