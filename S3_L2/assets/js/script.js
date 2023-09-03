@@ -250,27 +250,27 @@ const movies = [
 console.log('- - - - ESERCIZIO 10 - - - -');
 console.log(movies);
 
-var yearMoviesArray = [];
-for(let i=0; i<movies.length; i++) {
-  yearMoviesArray.push(movies[i].Year);
-}
-console.log(yearMoviesArray);
-
-var minValue = Math.min.apply(Math, yearMoviesArray);
-console.log('Anno minimo: ' + minValue);
-
-var oldestMovies = movies.filter(funzione10);
 function funzione10() {
+  var anni = [];
   for(let i=0; i<movies.length; i++) {
-    movies[i].Year == minValue;
+    anni.push(parseInt(movies[i].Year));
   }
+  /*console.log(anni);*/
+
+  var annoMin = Math.min(...anni);
+  console.log('Anno minimo: ' + annoMin);
+  /*console.log(typeof annoMin);*/
+
+  var oldestMovies = [];
+  for(let i=0; i<movies.length; i++) {
+    var moviesObject = movies[i];
+    if(movies[i].Year === annoMin.toString()) {
+      oldestMovies.push(moviesObject);
+    }
+  }
+  console.log(oldestMovies);
 }
-console.log(oldestMovies);
-
-
-
-
-    
+funzione10();
 
 /* ESERCIZIO 11
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
