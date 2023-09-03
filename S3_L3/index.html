@@ -210,31 +210,23 @@
     */
 
     const generateTable = function () {
-      const container = document.getElementById('tableArea');
-      const tabella = document.createElement('table');
-      tabella.style.width = '100%';
-      container.appendChild(tabella);
+      const container = document.getElementById("tableArea")
+      const table = document.createElement("table")
+      table.style.width = "100%"
 
-      const primaRiga = document.createElement('tr');
-      tabella.appendChild(primaRiga);
+      const firstRow = document.createElement("tr")
 
-      const thImmagine = document.createElement('th');
-      thImmagine.innerText = 'Immagine';
-      primaRiga.appendChild(thImmagine);
+      const thImage = document.createElement("th")
+      thImage.innerText = "Immagine"
+      const thProduct = document.createElement("th")
+      thProduct.innerText = "Prodotto"
+      const thQuantity = document.createElement("th")
+      thQuantity.innerText = "Quantità"
+      const thPrice = document.createElement("th")
+      thPrice.innerText = "Prezzo"
 
-      const thNomeProdotto = document.createElement('th');
-      thNomeProdotto.innerText = 'Nome Prodotto';
-      primaRiga.appendChild(thNomeProdotto);
 
-      const thQuantita = document.createElement('th');
-      thQuantita.innerText = 'Quantità';
-      primaRiga.appendChild(thQuantita);
-
-      const thPrezzo = document.createElement('th');
-      thPrezzo.innerText = 'Prezzo';
-      primaRiga.appendChild(thPrezzo);
-
-      const immagini = [
+      const images = [
         "https://m.media-amazon.com/images/I/81yJf4K+L1L._AC_SY450_.jpg",
         "https://m.media-amazon.com/images/I/61MRTh9xotL._AC_SX679_.jpg",
         "https://www.tradeinn.com/f/13805/138054505/samsung-smartphone-galaxy-s21-5g-8gb-128gb-6.2.jpg",
@@ -242,47 +234,76 @@
         "https://tomatosmartphone.it/wp-content/uploads/2022/06/EU-IN_Green.png"
       ]
 
-      for(let i=0; i<immagini.length; i++) {
-        const nuovaRiga = document.createElement('tr');
+      firstRow.appendChild(thImage)
+      firstRow.appendChild(thProduct)
+      firstRow.appendChild(thQuantity)
+      firstRow.appendChild(thPrice)
+      table.appendChild(firstRow)
 
-        const tdImmagine = document.createElement('td');
-        tdImmagine.innerHtml = `<img href="immagini[i]">`;
-       
-        const tdNomeProdotto = document.createElement('td');
-        tdNomeProdotto.innerText = 'Nome Prodotto';
-        
-        const tdQuantita = document.createElement('td');
-        tdQuantita.innerText = Math.floor(Math.random()*100);
-        
-        const tdPrezzo = document.createElement('td');
-        tdPrezzo.innerText = Math.floor(Math.random()*10)+1;
-        
-        nuovaRiga.appendChild(tdImmagine);
-        nuovaRiga.appendChild(tdNomeProdotto);
-        nuovaRiga.appendChild(tdQuantita);
-        nuovaRiga.appendChild(tdPrezzo);
+
+      for (let i = 0; i < images.length; i++) {
+        const newRow = document.createElement("tr")
+
+        const tdImage = document.createElement("td")
+        tdImage.innerHTML = `<img src=${images[i]} alt="smartphone" height="200" />`
+        const tdProduct = document.createElement("td")
+        tdProduct.innerText = "Smartphone"
+        const tdQuantity = document.createElement("td")
+        tdQuantity.innerText = Math.floor(Math.random() * 50)
+        const tdPrice = document.createElement("td")
+        tdPrice.innerText = Math.floor(Math.random() * 500) + "€"
+
+        newRow.appendChild(tdImage)
+        newRow.appendChild(tdProduct)
+        newRow.appendChild(tdQuantity)
+        newRow.appendChild(tdPrice)
+        table.appendChild(newRow)
       }
-    
+
+
+      container.appendChild(table)
     }
-    generateTable();
+
+    generateTable()
 
     /* ESERCIZIO 12
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
     */
 
-    const addRow = function () {
+    const addRow = function (imgUrl, productName, quantity, price) {
+      const table = document.querySelector("table")
 
+      const newRow = document.createElement("tr")
+
+      const tdImage = document.createElement("td")
+      tdImage.innerHTML = `<img src=${imgUrl} alt="smartphone" height="200" />`
+      const tdProduct = document.createElement("td")
+      tdProduct.innerText = productName
+      const tdQuantity = document.createElement("td")
+      tdQuantity.innerText = quantity
+      const tdPrice = document.createElement("td")
+      tdPrice.innerText = price + "€"
+
+      newRow.appendChild(tdImage)
+      newRow.appendChild(tdProduct)
+      newRow.appendChild(tdQuantity)
+      newRow.appendChild(tdPrice)
+      table.appendChild(newRow)
 
     }
+
+    addRow("https://data.wikomobile.com/documents/images/IT/dbd2f986d94529fc20c0864e2c5c978c.jpg", "Wiko", 10, 200)
 
     /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
     */
 
     const hideAllImages = function () {
-
-
+      const images = document.querySelectorAll('img');
+      console.log(images);
+      images.forEach(img => img.style.display = 'none');
     }
+    /*hideAllImages();*/
 
     /* EXTRA ESERCIZIO 15
       Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
@@ -290,17 +311,37 @@
 
     const changeColorWithRandom = function () {
 
+      const changeMyColor = document.getElementById('changeMyColor');
+      
+      changeMyColor.onclick = function() {
+        let red = Math.round(Math.random()*255);
+        let green = Math.round(Math.random()*255);
+        let blue = Math.round(Math.random()*255);
 
+        let randomColor = `rgb(${red},${green},${blue})`;
+
+        changeMyColor.style.cursor = 'pointer';
+        changeMyColor.style.color = randomColor;
+        changeMyColor.style.userSelect = 'none';
+      }
     }
+    changeColorWithRandom();
 
     /* EXTRA ESERCIZIO 16
       Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
     */
 
     const deleteVowels = function () {
+      
+      const texts = document.querySelectorAll('h1,h2,h3,p,a,li,th,td');
 
+      texts.forEach(node => node.innerText = [...node.innerText].filter(char => {
+        char = char.toLowerCase();
+        return char !== 'a' && char !== 'e' && char !== 'i' && char !== 'o' && char !== 'u'
+      }).join(''));
 
     }
+    deleteVowels();
 
   </script>
 
