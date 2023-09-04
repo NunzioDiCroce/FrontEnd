@@ -12,7 +12,7 @@ const clickHandling = function() {
         /* method to complete a task */
         completeTask();
         /* method to delete a task */
-        deleteFunction();
+        deleteTask();
     }
 }
 
@@ -25,7 +25,7 @@ const createTask = function() {
     /* newTask item definition */
     let newTask =
         `<div class="task">
-            <span id="taskname">${input.value}</span><button class="delete"><i class="far fa-trash-alt"></i></button>
+            <span id="taskname">${input.value}</span><button class="deleteBtn"><i class="far fa-trash-alt"></i></button>
         </div>`
     
     /* newTsk item position into DOM */
@@ -46,8 +46,13 @@ const completeTask = function() {
 }
 
 /* METHOD TO DELETE A TASK */
-const deleteFunction = function() {
-
+const deleteTask = function() {
+    let deleteBtnsArray = document.querySelectorAll('.deleteBtn');
+    for(let i=0; i<deleteBtnsArray.length; i++) {
+        deleteBtnsArray[i].addEventListener('click', function() {
+            this.parentNode.remove();
+        })
+    }
 }
 
 /* ADDEVENTLISTENER ON BUTTON CLICK AT WINDOW.ONLOAD */
