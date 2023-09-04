@@ -1,5 +1,5 @@
 
-/* function for button click handling */
+/* FUNCTION FOR BUTTON CLICK HANDLING */
 const clickHandling = function() {
 
     /* check if no task in input field*/
@@ -9,9 +9,14 @@ const clickHandling = function() {
 
         /* method to create a new task */
         createTask();
+        /* method to complete a task */
+        completeTask();
+        /* method to delete a task */
+        deleteFunction();
     }
 }
 
+/* METHOD TO CREATE A NEW TASK */
 const createTask = function() {
 
     let input = document.querySelector('#newTask input');
@@ -30,7 +35,22 @@ const createTask = function() {
     input.value = '';
 }
 
-/* addEventListener on button click at window.onload */
+/* METHOD TO COMPLETE A TASK */
+const completeTask = function() {
+    let tasksArray = document.querySelectorAll('.task');
+    for(let i=0; i<tasksArray.length; i++) {
+        tasksArray[i].addEventListener('click', function() {
+            this.classList.toggle('completed');
+        })
+    }
+}
+
+/* METHOD TO DELETE A TASK */
+const deleteFunction = function() {
+
+}
+
+/* ADDEVENTLISTENER ON BUTTON CLICK AT WINDOW.ONLOAD */
 window.onload = function() {
     let createTaskBtn = document.querySelector('#createTaskBtn');
     createTaskBtn.addEventListener('click', clickHandling)
